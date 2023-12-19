@@ -16,7 +16,12 @@ class CoinContainer extends Component {
   flibCoin() {
     const newCoin = choice(this.props.coins);
     this.setState((st) => {
-      return { curCoin: newCoin, nFlips: st.nFlips + 1 };
+      return {
+        curCoin: newCoin,
+        nFlips: st.nFlips + 1,
+        nHeads: st.nHeads + (newCoin.side === "heads" ? 1 : 0),
+        nTails: st.nTails + (newCoin.side === "tails" ? 1 : 0),
+      };
     });
   }
   handleClick(e) {
