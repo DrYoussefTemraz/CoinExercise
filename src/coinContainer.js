@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { choice } from "./helper";
+import Coin from "./Coin";
 
 class CoinContainer extends Component {
   static defaultProps = {
@@ -32,6 +33,13 @@ class CoinContainer extends Component {
       <div className="CoinContainer">
         <h1>let's Flip the coin</h1>
         <button onClick={this.handleClick}>Flip me</button>
+        {/* 1st option */}
+        {/* <Coin
+          side={this.state.curCoin.side}
+          imgSrc={this.state.curCoin.imgSrc} */}
+        {/* /> */}
+        {this.state.curCoin && <Coin info={this.state.curCoin} />}
+        {/* and pass the props to img in coin component */}
         <p>
           Out of {this.state.nFlips}flips, ther have been {this.state.nHeads}
           heads and{this.state.nTails}tails
